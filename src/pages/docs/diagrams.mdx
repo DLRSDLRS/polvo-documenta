@@ -1,0 +1,133 @@
+# 2. diagrams
+
+In UML, a model is represented graphically in the form of diagrams. A Diagram
+diagram provides a view of that part of reality described by the model.
+There are diagrams that express which users use which functionality
+and diagrams that show the structure of the system but without specifying
+a concrete implementation. There are also diagrams that represent
+supported and forbidden processes. In the current version 2.4.1, UML
+offers 14 diagrams that describe either the structure or the behavior of a
+system.
+
+## 2.1 Structure Diagrams
+UML offers seven types of diagrams for modeling the structure of a system
+from different perspectives. The dynamic behavior of the elements
+in question (i.e., their changes over time) is not considered in these diagrams.
+### The Class Diagram
+Just like the concepts of the object diagram (see next paragraph),
+concepts of the class diagram originate from conceptual data modeling
+and object-oriented software development. These concepts are used
+to specify the data structures and object structures of a system. The
+class diagram is based primarily on the concepts of class, generalization,
+and association. For example, in a class diagram, you can model
+that the classes Course, Student, and Professor occur in a system. Professors
+teach courses and students attend courses. Students and professors
+have common properties as they are both members of the class Person.
+This is expressed by a generalization relationship.
+
+### The Object Diagram
+Based on the definitions of the related class diagram, an object dia-
+gram shows a concrete snapshot of the system state at a specific execution
+time. For example, an object diagram could show that a professor
+Henry Foster (henryFoster) teaches the courses Object-Oriented Modeling
+(oom) and Object-Oriented Programming (oop).
+
+#### The Package Diagram
+The package diagram groups diagrams or model elements according toThe package diagram groups diagrams or model elements according to
+common properties, such as functional cohesion. For example, in a university
+administration system, you could introduce packages that contain
+information about the teaching, the research, and the administrative
+aspects. Packages are often integrated in other diagrams rather than being
+shown in separate diagrams.
+
+#### The Component Diagram
+UML pays homage to component-oriented software development by offering component diagrams. A component is an independent, executable
+unit that provides other components with services or uses the
+services of other components. UML does not prescribe any strict separation
+between object-oriented and component-oriented concepts. Indeed,
+these concepts may be combined in any way required. When specifying
+a component, you can model two views explicitly: the external view
+(black box view), which represents the specification of the component,
+and the internal view (white box view), which defines the implementation
+of the component.
+#### The Composition Structure Diagram
+The composition structure diagram allows a hierarchical decomposition
+of the parts of the system. You can therefore use a composition structure
+diagram to describe the internal structure of classes or components
+in detail. This enables you to achieve a higher level of detail than, for
+example, in a class diagram because the modeling is context-specific.
+You can specify details of the internal structure that are valid precisely
+for the context under consideration.
+#### The Deployment Diagram
+The hardware topology used and the runtime system assigned can be
+represented by the deployment diagram. The hardware encompasses
+processing units in the form of nodes as well as communication relationships
+between the nodes. A runtime system contains artifacts that
+are deployed to the nodes.
+#### The Profile Diagram
+Using profiles, you can extend UML to introduce domain-specific con-
+cepts. The actual core of the language definition of UML, the metamodel,
+remains unchanged. You can thus reuse modeling tools without
+having to make adjustments. For example, you can use profiles to introduce
+the concept of Java Enterprise Beans.
+### 2.3.2 Behavior Diagrams
+With the behavior diagrams, UML offers the infrastructure that enables
+you to define behavior in detail.
+Behavior refers to the direct consequences of an action of at least one
+object. It affects how the states of objects change over time. Behavior
+can either be specified through the actions of a single object or result
+from interactions between multiple objects.
+#### Use Case Diagram
+UML offers the use case diagram to enable you to define the require-
+ments that a system must fulfill. This diagram describes which users use
+which functionalities of the system but does not address specific details
+of the implementation. The units of functionality that the system provides
+for its users are called use cases. In a university administration
+system, for example, the functionality Registration would be a use case
+used by students.
+#### The State Machine Diagram
+Within their life cycle, objects go through different states. For example,
+a person is in the state logged out when first visiting a website. The state
+changes to logged in after the person successfully entered username and
+password (event login). As soon as the person logs out (event logout), the
+person returns to the state logged out. This behavior can be represented
+in UML using the state machine diagram. This diagram describes the
+permissible behavior of an object in the form of possible states and state
+transitions triggered by various events.
+#### The Activity Diagram
+You can model processes of any kind using activity diagrams: both busi-
+ness processes and software processes. For example, an activity diagram
+can show which actions are necessary for a student to participate in a
+lecture and an assignment. Activity diagrams offer control flow mechanisms
+as well as data flow mechanisms that coordinate the actions that
+make up an activity, that is, a process.
+#### The Sequence Diagram
+The sequence diagram describes the interactions between objects to ful-
+fill a specific task, for example, registration for an exam in a university
+administration system. The focus is on the chronological order of
+the messages exchanged between the interaction partners. Various constructs
+for controlling the chronological order of the messages as well as
+concepts for modularization allow you to model complex interactions.
+#### The Communication Diagram
+Similarly to the sequence diagram, the communication diagram de-
+scribes the communication between different objects. Here, the focus
+is on the communication relationships between the interaction partners
+rather than on the chronological order of the message exchange. Complex
+control structures are not available. This diagram clearly shows
+who interacts with whom.
+#### The Timing Diagram
+The timing diagram explicitly shows the state changes of the interaction
+partners that can occur due to time events or as a result of the exchange
+of messages. For example, a person is in the state logged in as soon as
+the message is received from the university administration system that
+the password sent is valid.
+#### The Interaction Overview Diagram
+The interaction overview diagram models the connection between dif-ferent interaction processes by setting individual interaction diagrams
+(i.e., sequence diagram, communication diagram, timing diagram, and
+other interaction overview diagrams) in a time-based and causal sequence.
+It also specifies conditions under which interaction processes
+are permitted to take place. To model the control flow, concepts from
+the activity diagram are used. For example, a user of the university administration
+system must first log in (which already represents a separate
+interaction with the system) before being allowed to use further
+functionalities.

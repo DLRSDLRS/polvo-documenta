@@ -44,5 +44,8 @@
   },
   "tropical": {
     "siteHost": "https://www.example.org"
+  },
+  "devDependencies": {
+    "@vanilla-extract/vite-plugin": "^3.6.1"
   }
 }

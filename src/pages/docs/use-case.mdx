@@ -1,0 +1,103 @@
+# Use Case Diagram
+The use case diagram allows us to describe the possible usage scenarios 
+(use cases) that a system is developed for. It expresses what a system
+should do but does not address any realization details such as data structures,
+algorithms, etc. These details are covered by other diagrams such
+as the class diagram or the interaction diagrams. The use case diagram also models which user of the system
+uses which functionality, i.e., it expresses who will actually work with
+the system to be built.
+
+1. What is being described? (The system.)
+2. Who interacts with the system? (The actors.)
+3. What can the actors do? (The use cases.)
+
+## Use cases
+A use case describes functionality expected from the system to be developed. It encompasses a number of functions that are executed when
+using this system. A use case provides a tangible benefit for one or more
+actors that communicate with this use case. The use case diagram does
+not cover the internal structure and the actual implementation of a use
+case. In general, a use case is triggered either by invocation of an actor
+or by a trigger event, in short, a trigger. An example of a trigger is that
+the semester has ended and hence the use case Issue certificate must be
+executed.
+
+## Actors
+To describe a system completely, it is essential to document not only
+what the system can do but also who actually works and interacts with
+the system. In the use case diagram, actors always interact with the system in the context of their use cases, that is, the use cases with which
+they are associated.
+An actor interacts with the system by using the system as an active actor, meaning that the actor initiates the execution of use cases;
+alternatively, the interaction involves the actor being used by the system,
+meaning that the actor is a passive actor providing functionality
+for the execution of use cases.
+## Associations
+An actor is connected
+with the use cases via associations which express that the actor communicates with the system and uses a certain functionality. Every actor
+must communicate with at least one use case. Otherwise, we would have
+an actor that does not interact with the system. In the same way, every
+use case must be in a relationship with at least one actor. If this were
+not the case, we would have modeled a functionality that is not used by
+anyone and is therefore irrelevant.
+An association is always binary, meaning that it is always specified
+between one use case and one actor.Multiplicities may be specified
+for the association ends. If a multiplicity greater than 1 is specified for
+the actor’s association end, this means that more than one instance of
+an actor is involved in the execution of the use case.
+### Relationships between Actors
+The use of abstract actors only makes sense in the context of an inheritance
+relationship: the common properties of the sub-actors are grouped
+and described at one point, namely with the common, abstract superactor.
+Generalization is a fundamental concept of object orientation and
+can be applied to many different language elements of UML.
+### Relationships between Use cases
+Use cases can also be in a relationship with other use
+cases. Here we differentiate between «include» relationships, «extend»
+relationships, and generalizations of use cases.
+The base use case always requires
+the behavior of the included use case to be able to offer its functionality.
+In contrast, the included use case can be executed on its own. The
+use of **«include»** is analogous to calling a subroutine in a procedural
+programming language.
+- An **«extend»** relationship is shown with a dashed arrow from the extending use case B to the base use case A. Both use cases can also be
+executed independently of one another.
+- A **condition** that must be fulfilled for the base use case to insert the Condition
+behavior of the extending use case can be specified for every «extend»
+relationship. The condition is specified, within curly brackets, in a note
+that is connected with the corresponding «extend» relationship.
+- By using **extension** points, you can define the point at which the be- Extension point
+havior of the extending use cases must be inserted in the base use case.
+The extension points are written directly within the use case
+
+## Creating a Use Case Diagram
+### Identifying Actors and Use Cases
+there are two ways to identify use cases for prospective
+system design:
+1. Analysis of requirements documents
+2. Analysis of the expectations of future users
+#### Questions for identifying actors
+- Who uses the main use cases? 
+- Who needs support for their daily work? 
+- Who is responsible for system administration?
+- What are the external devices/(software) systems with which the system
+must communicate?
+- Who has an interest in the results of the system?
+#### Questions for identifying use cases
+- What are the main tasks that an actor must perform? 
+- Does an actor want to query or even modify information contained
+in the system?
+- Does an actor want to inform the system about changes in other systems?
+- Should an actor be informed about unexpected events within the system?
+
+## Summary
+The use case diagram describes the behavior of a system from the view
+of the user. This means that this diagram presents the functionalities
+that the system offers but does not address the internal implementation
+details. The boundaries of the system—what can the system do and
+what can it not do?—are clearly defined. The users (actors) are always
+outside the system and use the functionalities of the system, which are
+depicted in the form of use cases. The relationship between a use case
+and an actor is referred to as an association. To keep use case diagrams
+as compact as possible, generalization is supported for both actors and
+use cases, which allows the extraction of common properties. Use cases
+can also access the functionality provided by other use cases by means
+of «include» and «extend» relationships.

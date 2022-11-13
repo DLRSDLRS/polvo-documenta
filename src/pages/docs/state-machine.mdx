@@ -1,0 +1,88 @@
+export const meta = {
+  title: `State machine`
+}
+
+# State machine
+___
+Over the course of its life, every system, or to be more precise every
+object, goes through a finite number of different states. Using a ***state machine diagram***, 
+you can model the possible states for the system or object in question, how state transitions 
+occur as a consequence of occurring events, and what behavior the system or object exhibits in each
+state.
+
+In the same way as every other diagram, a state machine diagram
+only models the part of a system that is necessary or relevant for the
+respective purpose.
+___
+
+### States and States transitions
+A state machine diagram is a graph with states as nodes and state 
+transitions as edges. In the diagram, a state is shown as a rectangle with
+round corners and is labeled with the name of the state. When an object
+is in a specific state, all internal activities specified in this state can be
+executed by this object.
+#### Internal activities
+Within a state you can model three activities that are executed at
+a predefined moment. When an activity is specified after the keyword
+entry, this activity must then be executed when the object enters the
+state; conversely, the exit activity is executed when the object exits the
+state. An activity preceded by the keyword do is executed while the
+object remains in this state, that is, as long as this state is active. The
+respective activity is always specified with a prepended forward slash
+that clearly identifies it as an activity.
+
+The change from one state to another is referred to as a state transition
+or simply transition.
+The origin of the transition is referred to as the source state and
+the end of the transition is referred to as the target state. You can specify
+various properties for a transition:
+- The event (also called “trigger”) that triggers the state transition
+- The guard (also called “guard condition” or simply “condition”) that
+enables the execution of the transition
+- Activities (also called “effects”) executed during the change to the
+target state.
+#### Event (Trigger)
+Events are exogenous stimuli (that is, stimuli that come from outside 
+the system/object) that can trigger a state transition.
+#### Guard (condition)
+If the event specified for the transition occurs, the guard is checked. 
+The guard is a boolean expression. At a specific point in time, it 
+evaluates to either true or false.
+#### Activity (Effect)
+If the guard is true, all activities in the current state
+are terminated, any relevant exit activity is executed, and the transition
+takes place. During the state transition, any activities defined for 
+that transition are executed. A transition—at least from a conceptual
+perspective—requires no time. Therefore, the system is always in a state
+and never in a transition. The activities specified for a transition must
+therefore also not require any significant time.
+#### Completion event and Completion transition 
+Finishing these activities creates a ***completion event*** that triggers the
+transition. This type of transition is also referred to as a ***completion transition***. 
+If an event occurs for which no behavior is specified in the
+current state, the event is not consumed and is lost.
+
+You can model internal transitions within states. These internal transitions 
+handle the occurrence of events within a state. You use them to
+model the reaction to an event when the system does not exit the state
+that is currently active, meaning that entry and exit activities are not executed.
+___
+## Types of States 
+There is a distinction between ***“real” states*** and ***pseudostates***. 
+Pseudostates are transient, which means that the system cannot 
+remain in a pseudostate. They are not states in the actual sense but rather
+control structures that enable more complex states and state transitions.
+You cannot annotate activities to pseudostates. These pseudostates include
+the initial state, the decision node, the parallelization and synchronization
+nodes, the history state, the entry and exit points, and the
+terminate node.
+
+#### Initial state
+The initial state is represented in the diagram as a small black circle
+and marks the “start” of a state machine diagram or a composite state.
+#### Decision node
+The decision node is represented in the diagram with a diamond. You
+can use it to model alternative transitions. It has exactly one incoming
+edge and at least two outgoing edges. At the incoming edge, you model
+the event that triggers the transition; at the outgoing edges, you specify
+the guards for the alternative paths for the state transition.

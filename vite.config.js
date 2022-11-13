@@ -7,6 +7,7 @@ import rehypeExtractTocMdx from '@stefanprobst/rehype-extract-toc/mdx'
 import remarkGfm from 'remark-gfm'
 import imagePresetsPlugin from 'vite-plugin-image-presets'
 import imagePresetsConfig from './src/imagePresets'
+import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin'
 
 export const plugins = [
   react(),
@@ -15,7 +16,10 @@ export const plugins = [
     remarkPlugins: [remarkGfm],
     providerImportSource: '@mdx-js/react'
   }),
-  imagePresetsPlugin(imagePresetsConfig)
+  imagePresetsPlugin(imagePresetsConfig),
+  vanillaExtractPlugin({
+    //configuration
+  })
 ]
 
 export const build = {

@@ -13,7 +13,15 @@ export function DefaultLayout({ meta, children }) {
       <div
         className={css({
           margin: '0 auto',
-          maxWidth: '44rem'
+          background: 'darkolivegreen',
+          color: 'whitesmoke',
+          padding: '1rem',
+          opacity: '90%',
+          lineHeight: '1.5rem',
+          textAlign: 'justify',
+          maxWidth: '40rem',
+          fontSize: '1.125rem',
+          fontFamily: 'Segoe UI, sans-serif'
         })}
       >
         {children}

@@ -1,0 +1,298 @@
+export const meta = {
+  title: `Class diagram`
+}
+
+# Class diagram
+___
+
+The class diagram is without doubt the most widely used UML diagram.
+It is applied in various phases of the software development process.
+The level of detail or abstraction of the class diagram is different
+in each phase. In the early project phases, a class diagram allows you to
+create a conceptual view of the system and to define the vocabulary to be
+used. You can then refine this vocabulary into a programming language
+up to the point of implementation. In the context of object-oriented programming,
+the class diagram visualizes the classes a software system
+consists of and the relationships between these classes. Due to its simplicity
+and its popularity, the class diagram is ideally suited for quick
+sketches. However, you can also use it to generate program code automatically.
+In practice, the class diagram is also often used for documentation
+purposes.
+
+___
+
+## Objects
+A system contains numerous different individuals. Individuals might be
+not only persons but also animals, plants, inanimate objects, artifacts,
+etc. that can be identified uniquely.
+In UML, we depict concrete objects of a system and their relationships (links) using object diagrams.
+
+An object has a unique identity and a number of characteristics that describe it in more detail. It rarely appears in isolation in a system;
+instead, it usually interacts and communicates with other objects. The 
+relationships between the objects are referred to as links. The characteristics of an object include its structural characteristics (attributes) and
+its behavior (in the form of operations). Whilst concrete values are assigned
+to the attributes in the object diagram, operations are generally
+not depicted. Operations are identical for all objects of a class and are
+therefore usually described exclusively for the class.
+
+Although the name of an object must be unique, different objects can have
+attributes with identical values.
+
+If specific objects are not represented in the object diagram,
+this does not mean that they do not exist; it merely expresses that
+the unrecorded objects are not important for the moment.
+Many individuals that appear in a system have identical characteristics
+and behavior.
+___
+
+## Classes
+A class is the construction plan for a set of similar objects that appear
+in the system to be specified. Classes can characterize, for example,
+persons (e.g., students), things (e.g., buildings), events (e.g., courses or
+exams), or even abstract concepts such as groups. In object-oriented
+programming languages like Java [4], programs are created based on
+classes.
+
+An attribute allows you to store information that is known for all instances but that generally 
+has different specific values for each instance.
+Operations specify how specific behavior can be triggered on individual
+objects.
+
+To ensure that a model remains clear and understandable, we generally 
+do not model all of the details of the content: we only include
+the information that is relevant for the moment and for the system to
+be implemented.
+
+**Abstraction** This means that we abstract from reality to make the
+model less complex and to avoid an unnecessary flood of information.
+In the model, we restrict ourselves to the essentials.
+___
+## Notation
+In a class diagram, a class is represented by a rectangle that can be subdivided
+into multiple compartments.
+According to common naming conventions, class names are singular
+nouns. The class name should describe the class using vocabulary typical
+for the application domain. The second compartment of the rectangle
+contains the attributes of the class, and the third compartment the
+operations of the class. The contents of these compartments are positioned
+left-justified and are optional.
+
+Attributes and operations are usually accessed via their names, which, according
+to naming conventions, begin with a lower case letter.
+___
+## Attributes 
+An attribute has at least a name.
+The type of the attribute may be specified after the name using
+: Type. Possible attribute types include primitive data types, such
+Type as integer and string, composite data types, for example a date, an enumeration,
+or user-defined classes.
+By specifying name:
+String, for example, we define the attribute name with type String.
+You can specify additional properties of the attribute within curly
+brackets.
+___
+## Multiplicities
+The multiplicity of an attribute indicates how many values an attribute
+can contain. This enables you to define arrays, just like in programming
+languages.
+___
+## Operations
+*Operations* are characterized by their name, their parameters, and the
+type of their return value.
+When an operation is called in a program, the behavior assigned to this 
+operation is executed.
+___
+## Visibility markers
+The visibility of attributes and operations specifies who is and who is not
+permitted to access them. If an attribute or operation does not have a visibility
+specified, no default visibility is assumed.
+___
+## Class Variables and Class Operations
+Attributes are usually defined at instance level. If, for example, a class
+is realized in a programming language, memory is reserved for every attribute
+of an object when it is created. Such attributes are also referred to
+as **instance variables** or instance attributes.
+
+In contrast to instance variables, **class variables** are created only
+once for a class rather than separately for every instance of this class.
+These variables are also referred to as static attributes or class attributes.
+___
+## Associations
+Associations between classes model possible relationships, known as
+links, between instances of the classes. They describe which classes are
+potential communication partners. If their attributes and operations have
+the corresponding visibilities, the communication partners can access
+each other’s attributes and operations.
+### Binary Associations
+A ***binary association*** allows us to associate the instances of two classes
+with one another.
+### N-ary Associations
+If more than two partner objects are involved in a relationship, you can
+model this using ***n-ary association***. An n-ary association is represented
+with a hollow diamond in the center.
+___
+## Association classes
+If you want to assign attributes or operations to the relationship between
+one or more classes rather than to a class itself, you can do this using
+an association class.
+___
+## Aggregations
+An aggregation is a special form of association that is used to express
+that instances of one class are parts of an instance of another class. UML
+differentiates between two types: ***shared aggregation*** and ***composition***.
+Both are represented by a diamond at the association end of the class
+that stands for the *“whole”*.
+### Shared Aggregations
+In the UML standard, a shared aggregation has intentionally informal
+semantics. In principle, a shared aggregation expresses a weak belonging
+of the parts to a whole, meaning that parts also exist independently
+of the whole.
+### Compositions
+The use of a composition expresses that a specific part can only be contained in at most one 
+composite object at one specific point in time.
+This results in a maximum multiplicity of 1 at the aggregating end.
+___
+## Generalizations
+We can use a generalization relationship to highlight commonalities
+between classes, meaning that we no longer have to define these common
+characteristics multiple times. Conversely, we can use the generalization
+to derive more specific classes from existing classes.
+### Inheritance
+The generalization relationship expresses that the characteristics 
+(attributes and operations) and associations that are specified for a general
+class (superclass) are passed on to its subclasses. Therefore, the generalization 
+relationship is also referred to as **inheritance**.
+This means that every instance of a subclass is simultaneously an indirect instance
+of the superclass. The subclass “possesses” all instance attributes and
+class attributes and all instance operations and class operations of the
+superclass provided these have not been marked with the visibility private.
+### Classification
+it Refers to the "instanceOf" relationship between an object and its class.
+In many object-oriented programming languages, an object can usually only be
+the direct instance of precisely one class.
+#### Multiple classification
+In contrast **UML** allows *multiple classification*.
+With multiple classification,
+an object can be an instance of multiple classes without these
+classes having to be associated with one another in an inheritance relationship.
+In contrast to multiple inheritance, no new class inheriting the
+characteristics of the superclasses involved is introduced.
+#### Generalization set
+Generalization sets can be described more precisely by the following constraints:
+- Overlapping or disjoint: in an overlapping generalization set, an object
+may be an instance of multiple subclasses simultaneously. In a
+disjoint generalization set, an object may be an instance of a maximum
+of one subclass.
+- Complete or incomplete: in a complete generalization set, each instance
+of the superclass must be an instance of at least one of the
+subclasses. In incomplete generalization sets, this is not necessary.
+___
+## Abstract Classes vs. Interfaces
+Classes that cannot be instantiated themselves are modeled as ***abstract classes***.
+These are classes for which there are no objects—only their
+subclasses can be instantiated. ***Abstract classes*** are used exclusively to
+highlight common characteristics of their subclasses and are therefore 
+only useful in the context of generalization relationships. Operations of
+abstract classes can also be labeled as ***abstract***. An abstract operation 
+does not offer any implementation itself. However, it requires an implementation
+in the concrete subclasses. Operations that are not ***abstract***
+pass on their behavior to all subclasses.
+
+Similarly to the abstract class, an ***interface*** also does not have an implementation 
+or any direct instances. An ***interface*** represents a contract.
+The classes that enter into this contract, that is, the classes that implement
+the ***interface***, obligate themselves to provide the behavior specified
+by the ***interface***. In contrast to the relationship between an ***abstract class***
+and its subclasses, an “is a” relationship between an ***interface*** and the
+classes that implement it is not necessary. Operations of ***interfaces*** never
+have an implementation.
+
+An ***interface*** is denoted like a class but with the additional keyword
+«interface» before the name.
+
+___
+## Data types
+Attributes, parameters, and return values of operations have a type that 
+specifies which concrete forms they may take.
+In UML, a data type is visualized in the same way as a class, with the
+difference that the name of the data type is annotated with the additional
+keyword «datatype»
+### Primitive data type
+Primitive data types do not have any internal structure. In UML there 
+are four pre-defined primitive data types: 
+> ***Boolean, Integer, UnlimitedNatural, and String***.
+
+### Enumeration
+Enumerations are data types whose values are defined in a list.
+The notation is the same as for a class with the specific identification
+«enumeration».
+___
+## Creating a Class diagram
+UML describes the syntax and semantics of classes and their relationships
+but not how the classes and relationships are constructed. Unfortunately,
+it is not possible in principle to completely extract classes and
+their characteristics from a natural language text automatically.
+However, there are guidelines for creating a class diagram.
+
+- Identifying the classes
+- Identifying the attributes
+- Identifying the relationships between classes
+- Generalizations
+- Associations and Aggregations
+- Code Generation 
+  - Forward Engineering
+  - Reverse Engineering
+___
+
+## Example
+
+```Java
+abstract class UniversityMember {
+  public String firstName;
+  public String lastName;
+  public int ssNo;
+}
+
+class Student extends UniversityMember {
+  public int matNo;
+  public CourseExecution [] cC; // completed c.
+}
+
+class Employee extends UniversityMember {
+  private int acctNo;
+  public CourseExecution [] cE; // supported c.
+  public int getAcctNo { return acctNo; }
+}
+
+class CourseExecution {
+  public int year;
+  public ESemester semester;
+  public Student [] student;
+  public Course course;
+  public Hashtable support;
+  // Key: employee
+  // Value: (role, hours)
+}
+
+class Course {
+  public int courseNo;
+}
+
+Enumeration ESemester {
+  winter;
+  summer;
+}
+
+Enumeration ERole {
+  lecturer;
+  tutor;
+  examiner;
+}
+```
+___
+
+## Notation Elements
+
+import classNotations from '../layouts/classNotations.png';
+
+<img src={classNotations}/>
